@@ -19,7 +19,7 @@ const Navbar = () => {
   ]
 
   return (
-    <div className='w-full flex justify-center items-center mt-5 px-4 sticky top-8 z-50'>
+    <div className='w-full flex justify-center items-center mt-5 px-4 sticky top-8 z-100'>
       <div className='w-full max-w-6xl h-full flex justify-center items-center text-black rounded-[50px] lg:rounded-[80px] relative overflow-visible py-1 lg:py-2' 
            style={{
              background: 'rgba(255, 255, 255, 0.95)',
