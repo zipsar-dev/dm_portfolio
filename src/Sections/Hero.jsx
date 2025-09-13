@@ -1,19 +1,27 @@
-import React from "react";
-
 const Hero = () => {
   return (
     <section
       id="Home"
-      className="h-[calc(100vh-80px)] flex justify-center items-center flex-col relative"
+      className="min-h-[calc(100vh-80px)] flex justify-center items-center flex-col relative px-4 py-8"
     >
-      <div className="flex flex-col items-center justify-center gap-1">
-        <h1 className="text-4xl font-bold">We Craft Bold <span className="text-orange-400">Digital</span> Stories</h1>
-        <h1 className="text-4xl font-bold">That Sparkle, Engage and Convert</h1>
+      <div className="flex flex-col items-center justify-center gap-2 text-center max-w-6xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+          We Craft Bold <span className="text-orange-400">Digital</span> Stories
+        </h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+          That Sparkle, Engage and Convert
+        </h1>
       </div>
-      <p className="text-gray-900/60 my-2">"From strategy to storytelling, we blend creativity with performance marketing to help brands shine in the digital playground."</p>
-      <div className="flex gap-4 mt-4">
-        <button className="cursor-pointer font-semibold py-2 px-4 text-white bg-orange-400 rounded-[40px]">Let's Create Magic</button>
-        <button className="cursor-pointer font-semibold border-2 px-4 py-2 text-orange-400 border-orange-400 rounded-[40px]">See Our Work</button>
+      <p className="text-gray-900/60 my-4 md:my-6 text-center text-sm sm:text-base max-w-4xl px-4">
+        "From strategy to storytelling, we blend creativity with performance marketing to help brands shine in the digital playground."
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full max-w-md sm:max-w-none justify-center">
+        <button className="cursor-pointer font-semibold py-3 px-6 md:py-4 md:px-8 text-white bg-orange-400 rounded-[40px] hover:bg-orange-500 transition-colors duration-300 text-sm md:text-base">
+          Let's Create Magic
+        </button>
+        <button className="cursor-pointer font-semibold border-2 px-6 py-3 md:px-8 md:py-4 text-orange-400 border-orange-400 rounded-[40px] hover:bg-orange-400 hover:text-white transition-all duration-300 text-sm md:text-base">
+          See Our Work
+        </button>
       </div>
     </section>
   );
