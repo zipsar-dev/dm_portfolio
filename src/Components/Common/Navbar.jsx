@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { Menu, X, Home, User, Settings, Briefcase, MessageSquare, Phone } from 'lucide-react'
@@ -38,7 +39,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Home</span>
@@ -49,7 +51,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>About</span>
@@ -60,7 +63,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Services</span>
@@ -75,7 +79,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Project</span>
@@ -86,7 +91,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Testimonial</span>
@@ -97,7 +103,8 @@ const Navbar = () => {
             smooth={true} 
             duration={500}
             spy={true}
-            activeClass="text-orange-500"
+            offset={-100}
+            activeClass="!text-orange-500 "
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Contact</span>
@@ -158,10 +165,11 @@ const Navbar = () => {
                     to={item?.to}
                     smooth={true}
                     duration={500}
-                    offset={isFirst ? 0 : -80}
-                    spy={true}
-                    activeClass="!text-orange-500 !bg-orange-50/80 border-orange-200/50"
-                    className='flex items-center gap-3 p-4 rounded-xl cursor-pointer hover:text-orange-500 transition-all duration-200 font-medium hover:bg-orange-50/60 backdrop-blur-sm text-gray-800 border border-transparent hover:border-orange-200/50'
+                    offset={isFirst ? -100 : -100}
+                    spy={false}
+                    className={`flex items-center gap-3 p-4 rounded-xl cursor-pointer hover:text-orange-500 transition-all duration-200 font-medium hover:bg-orange-50/60 backdrop-blur-sm text-gray-800 border border-transparent hover:border-orange-200/50 ${
+                      activeSection === item.to ? '!text-orange-500  !border-orange-200/50' : ''
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     <IconComponent size={18} className="text-orange-400" />
@@ -188,17 +196,6 @@ const Navbar = () => {
         }
         .animate-slideDown {
           animation: slideDown 0.2s ease-out;
-        }
-        
-        /* Additional styles for active states */
-        .navbar-link-active {
-          color: rgb(249 115 22) !important;
-          background-color: rgba(255 237 213 / 0.5) !important;
-          transform: scale(1.05) !important;
-        }
-        
-        .navbar-link-active span {
-          color: rgb(249 115 22) !important;
         }
       `}</style>
     </div>
