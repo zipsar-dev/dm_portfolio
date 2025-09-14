@@ -44,7 +44,7 @@ const Project = () => {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className='w-full h-[280px] relative rounded-2xl overflow-hidden border border-white/30 shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
+                className='w-full h-[280px] relative rounded-2xl overflow-hidden border-3 border-white shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
                 style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
               >
                 <img 
@@ -70,7 +70,7 @@ const Project = () => {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className='w-full h-[320px] relative rounded-2xl overflow-hidden border border-white/30 shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
+                className='w-full h-[320px] relative rounded-2xl overflow-hidden border-3 border-white shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
                 style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
               >
                 <img 
@@ -96,7 +96,7 @@ const Project = () => {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className='w-full h-[340px] relative rounded-3xl overflow-hidden border border-white/30 shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
+                className='w-full h-[340px] relative rounded-3xl overflow-hidden border-3 border-white shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
                 style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
               >
                 <img 
@@ -122,7 +122,7 @@ const Project = () => {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className='w-full h-[360px] relative rounded-3xl overflow-hidden border border-white/30 shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
+                className='w-full h-[360px] relative rounded-3xl overflow-hidden border-3 border-white shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
                 style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
               >
                 <img 
@@ -148,7 +148,7 @@ const Project = () => {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className='w-full h-[400px] relative rounded-3xl overflow-hidden border border-white/30 shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
+                className='w-full h-[400px] relative rounded-3xl overflow-hidden border-3 border-white shadow-xl backdrop-blur-md bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl group'
                 style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
               >
                 <img 

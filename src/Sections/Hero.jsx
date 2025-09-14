@@ -15,7 +15,8 @@ const Hero = () => {
       <p className="text-gray-900/60 my-4 md:my-6 text-center text-sm sm:text-base max-w-4xl px-4">
         "From strategy to storytelling, we blend creativity with performance marketing to help brands shine in the digital playground."
       </p>
-      <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full max-w-md sm:max-w-none justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center relative">
+        <img src="/Images/arrow.png" alt="Illustration" className="absolute -top-6 -right-10 w-15 h-auto scale-x-[-1]"/>
         <button className="cursor-pointer font-semibold py-3 px-6 md:py-4 md:px-8 text-white bg-orange-400 rounded-[40px] hover:bg-orange-500 transition-colors duration-300 text-sm md:text-base">
           Let's Create Magic
         </button>
