@@ -5,8 +5,9 @@ const About = () => {
   return (
     <section id="About" className="min-h-screen flex justify-center items-center flex-col py-8 px-4">
       <div className="text-center mb-8">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex items-center gap-2">
           Our <span className="text-orange-400">Vibe..</span>
+          <img src="/Images/sparkle.png" alt="" className="w-10"/>
         </h1>
       </div>
       

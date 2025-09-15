@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import { Menu, X, Home, User, Settings, Briefcase, MessageSquare, Phone } from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('Home')
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -18,6 +19,27 @@ const Navbar = () => {
     { name: 'Testimonial', icon: MessageSquare, to: 'Testimonial' },
     { name: 'Contact', icon: Phone, to: 'Footer' }
   ]
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['Home', 'About', 'Services', 'Project', 'Testimonial', 'Footer']
+      const scrollPosition = window.scrollY + 150
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i])
+          break
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <div className='w-full flex justify-center items-center mt-5 px-4 sticky top-8 z-100'>
@@ -40,7 +62,7 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Home</span>
@@ -52,7 +74,7 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>About</span>
@@ -64,14 +86,14 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Services</span>
           </Link>
           
           <h1 className='font-bold text-2xl xl:text-3xl text-gray-900'>
-            Logo
+            FORZIC
           </h1>
           
           <Link 
@@ -80,7 +102,7 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Project</span>
@@ -92,7 +114,7 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Testimonial</span>
@@ -104,7 +126,7 @@ const Navbar = () => {
             duration={500}
             spy={true}
             offset={-100}
-            activeClass="!text-orange-500 "
+            activeClass="!text-orange-500"
             className='flex items-center gap-2 cursor-pointer hover:text-orange-400 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-full'
           >
             <span className='font-medium text-sm'>Contact</span>
@@ -142,12 +164,15 @@ const Navbar = () => {
                 const IconComponent = item.icon;
                 const isFirst = index === 0;
                 const isLast = index === navItems.length - 1;
+                const isActive = activeSection === item.to;
                 
                 if (isLast) {
                   return (
                     <div
                       key={index}
-                      className='flex items-center gap-3 p-4 rounded-xl cursor-pointer hover:text-orange-500 transition-all duration-200 font-medium hover:bg-orange-50/60 backdrop-blur-sm text-gray-800 border border-transparent hover:border-orange-200/50'
+                      className={`flex items-center gap-3 p-4 rounded-xl cursor-pointer hover:text-orange-500 transition-all duration-200 font-medium hover:bg-orange-50/60 backdrop-blur-sm text-gray-800 border border-transparent hover:border-orange-200/50 ${
+                        isActive ? '!text-orange-500 !bg-orange-50/60 !border-orange-200/50' : ''
+                      }`}
                       onClick={() => {
                         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
                         setIsOpen(false);
@@ -168,7 +193,7 @@ const Navbar = () => {
                     offset={isFirst ? -100 : -100}
                     spy={false}
                     className={`flex items-center gap-3 p-4 rounded-xl cursor-pointer hover:text-orange-500 transition-all duration-200 font-medium hover:bg-orange-50/60 backdrop-blur-sm text-gray-800 border border-transparent hover:border-orange-200/50 ${
-                      activeSection === item.to ? '!text-orange-500  !border-orange-200/50' : ''
+                      isActive ? '!text-orange-500 !bg-orange-50/60 !border-orange-200/50' : ''
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
