@@ -46,7 +46,7 @@ const Hero = () => {
           <img 
             src="/Images/lines.png" 
             alt="illustration" 
-            className="w-6 sm:w-8 md:w-10 lg:w-12 absolute -top-3 -right-1 sm:-top-4 sm:-right-1 md:-top-5 md:-right-2 lg:top-0 lg:right-5"
+            className="w-6 sm:w-8 md:w-10 lg:w-12 absolute -top-3 -right-1 sm:-top-4 sm:-right-1 md:-top-5 md:-right-2 lg:top-0 lg:-right-8"
           />
         </div>
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
