@@ -136,7 +136,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className='lg:hidden w-full flex justify-between items-center px-6 relative z-10'>
           <h1 className='font-bold text-xl text-gray-900'>
-            Logo
+            FORZIC
           </h1>
           
           <button 

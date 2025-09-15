@@ -2,64 +2,58 @@ import React, { useState } from 'react'
 
 const projects = [
   {
-    image: '/Images/proj-1.jpg',
+    image: '/Images/Project/beautician.jpg',
     title: 'Beautician Freelancer',
     desc: 'Designed and developed a professional website, building her online presence and enabling client outreach.',
     category: 'Web Development'
   },
   {
-    image: '/Images/proj-2.jpg',
+    image: '/Images/Project/srd.jpg',
     title: 'SRD Infra',
     desc: 'Delivered complete marketing support, including videography, editing, motion graphics, and content writing to establish a strong digital footprint.',
     category: 'Construction Brand'
   },
   {
-    image: '/Images/proj-3.jpg',
+    image: '/Images/Project/ssmt.jpg',
     title: 'SSMT',
     desc: 'Executed full-scale marketing services covering creative production, content development, and promotional campaigns.',
     category: 'Construction & Infrastructure'
   },
   {
-    image: '/Images/proj-1.jpg',
+    image: '/Images/Project/ss.jpg',
     title: 'SS Engineering',
     desc: 'Provided end-to-end marketing solutions with video content, graphics, and brand-focused media strategies.',
     category: 'Interior Design & Engineering'
   },
   {
-    image: '/Images/proj-2.jpg',
+    image: '/Images/Project/vinson.png',
     title: 'Vinson Interiors',
     desc: 'Strengthened brand positioning through creative videos, motion graphics, and tailored marketing campaigns.',
     category: 'Interior Design Firm'
   },
   {
-    image: '/Images/proj-3.jpg',
+    image: '/Images/Project/velan.png',
     title: 'Velan Kappi',
     desc: 'Managed promotional campaigns, video marketing, and engaging content to attract a larger customer base.',
     category: 'Café'
   },
   {
-    image: '/Images/proj-1.jpg',
+    image: '/Images/Project/radio.jpg',
     title: 'Radio 80\'s & Discount 365',
     desc: 'Produced promotional content, branding materials, and digital marketing strategies to improve visibility and sales.',
     category: 'Clothing & Retail Brands'
   },
   {
-    image: '/Images/proj-2.jpg',
+    image: '/Images/Project/hanu.jpg',
     title: 'Hanu Reddy Realty',
     desc: 'Created impactful digital content, motion graphics, and brand communication assets to support property marketing.',
     category: 'Real Estate Promoter'
   },
   {
-    image: '/Images/proj-3.jpg',
+    image: '/Images/Project/funmall.jpg',
     title: 'Fun Mall',
     desc: 'Executed event promotions and on-ground marketing campaigns to increase footfall and customer engagement.',
     category: 'Event Marketing'
-  },
-  {
-    image: '/Images/proj-1.jpg',
-    title: 'CRM Management',
-    desc: 'Implemented and handled CRM systems across projects to streamline customer engagement and lead management.',
-    category: 'All Clients'
   }
 ]
 

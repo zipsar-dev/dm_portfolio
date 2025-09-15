@@ -5,7 +5,7 @@ const TestimonialCard = ({name, company, review, star, position}) => {
   const starCount = Math.min(Math.max(star || 5, 1), 5)
   
   return (
-    <div className='w-full h-auto min-h-[280px] sm:min-h-[320px] md:min-h-[350px] lg:min-h-[380px] relative border-2 border-white/20 rounded-2xl sm:rounded-3xl hover:scale-105 transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl p-4 sm:p-5 md:p-6 lg:p-7 flex flex-col justify-between bg-gradient-to-br from-orange-400/25 via-orange-400/20 to-orange-400/15 backdrop-blur-md group'>
+    <div className='w-full h-full min-h-[280px] sm:min-h-[320px] md:min-h-[350px] lg:min-h-[380px] relative border-2 border-white/20 rounded-2xl sm:rounded-3xl hover:scale-105 transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl p-4 sm:p-5 md:p-6 lg:p-7 flex flex-col justify-between bg-gradient-to-br from-orange-400/25 via-orange-400/20 to-orange-400/15 backdrop-blur-md group'>
       
       {/* Quote Icon */}
       <div className='absolute top-3 sm:top-4 md:top-5 right-3 sm:right-4 md:right-5 transition-opacity duration-300'>
