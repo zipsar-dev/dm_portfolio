@@ -36,7 +36,7 @@ const Services = () => {
       id: 5,
       title: "Brand Positioning",
       desc: "Carve out your unique space in the market with positioning that makes your brand memorable and irresistible.",
-      image: "/Images/Services/brand_position.jpg"
+      image: "/Images/Services/Brand_position.jpg"
     },
     {
       id: 6,

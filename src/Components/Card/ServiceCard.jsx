@@ -1,7 +1,7 @@
 const ServiceCard = ({ image, title, desc }) => {
   return (
     <div className="w-full h-[400px] sm:h-[420px] md:h-[400px] lg:h-[420px] relative border-4 border-white rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300 overflow-hidden shadow-lg hover:shadow-xl group cursor-pointer">
-      <div className="w-full h-full bg-gradient-to-b from-transparent via-transparent to-orange-400/80 absolute top-0 right-0 z-20 group-hover:to-orange-500/90 transition-colors duration-300"></div>
+      <div className="w-full h-full bg-gradient-to-b from-transparent via-transparent to-black/80 absolute top-0 right-0 z-20 group-hover:to-orange-500/90 transition-colors duration-300"></div>
       <img 
         src={image} 
         alt={title || "Service image"} 
