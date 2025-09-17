@@ -39,7 +39,7 @@ const projects = [
   },
   {
     image: '/Images/Project/radio.jpg',
-    title: 'Radio 80\'s & Discount 365',
+    title: "Radio 80's & Discount 365",
     desc: 'Produced promotional content, branding materials, and digital marketing strategies to improve visibility and sales.',
     category: 'Clothing & Retail Brands'
   },
@@ -80,7 +80,8 @@ const Project = () => {
           alt={proj.title} 
           className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
         />
-        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-orange-600/90 transition-all duration-500'></div>
+        {/* Overlay remains but no color change on hover */}
+        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-500'></div>
         
         {/* Category Badge */}
         <div className='absolute top-4 right-4 lg:top-5 lg:right-5'>
@@ -91,10 +92,10 @@ const Project = () => {
         
         {/* Content */}
         <div className='absolute bottom-0 left-0 right-0 p-5 lg:p-6'>
-          <h3 className='text-lg lg:text-xl xl:text-2xl font-bold text-white mb-2 lg:mb-3 leading-tight group-hover:text-orange-100 transition-colors duration-300'>
+          <h3 className='text-lg lg:text-xl xl:text-2xl font-bold text-white mb-2 lg:mb-3 leading-tight transition-colors duration-300'>
             {proj.title}
           </h3>
-          <p className='text-white/90 text-sm lg:text-base leading-relaxed line-clamp-3 group-hover:text-orange-50 transition-colors duration-300'>
+          <p className='text-white/90 text-sm lg:text-base leading-relaxed line-clamp-3 transition-colors duration-300'>
             {proj.desc}
           </p>
         </div>
@@ -109,15 +110,15 @@ const Project = () => {
     >
       {/* Background Elements */}
       <div className='absolute inset-0 opacity-30'>
-        <div className='absolute top-10 left-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl'></div>
-        <div className='absolute bottom-20 right-20 w-96 h-96 bg-blue-200/15 rounded-full blur-3xl'></div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-200/10 rounded-full blur-3xl'></div>
+        <div className='absolute top-10 left-10 w-64 h-64 bg-[#dff8b0]/40 rounded-full blur-3xl'></div>
+        <div className='absolute bottom-20 right-20 w-96 h-96 bg-green-200/20 rounded-full blur-3xl'></div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-lime-200/10 rounded-full blur-3xl'></div>
       </div>
 
       {/* Header Section */}
       <div className='flex flex-col items-center text-center mb-12 sm:mb-16 md:mb-20 px-4 max-w-5xl relative z-10'>
         <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 leading-tight flex items-center gap-3'>
-          Playground <span className='bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent'>Showcase</span>
+          Playground <span className='bg-gradient-to-r from-[#B2E447FF] to-[#c6f75d] bg-clip-text text-transparent'>Showcase</span>
           <img src="/Images/lines.png" alt="" className="w-10"/>
         </h1>
         <p className='text-gray-600 text-base sm:text-lg md:text-xl text-center max-w-4xl leading-relaxed font-medium'>
@@ -150,14 +151,14 @@ const Project = () => {
             ))}
           </div>
 
-          {/* Large Desktop Layout: 3 Columns - Adjusted Width & Height */}
+          {/* Large Desktop Layout: 3 Columns */}
           <div className='hidden lg:grid xl:hidden grid-cols-3 gap-6'>
             {getProjectsToShow().map((proj, idx) => (
               <ProjectCard key={idx} proj={proj} idx={idx} />
             ))}
           </div>
 
-          {/* Extra Large Desktop Layout: 3 Columns - Adjusted Width & Height */}
+          {/* Extra Large Desktop Layout: 3 Columns */}
           <div className='hidden xl:grid grid-cols-3 gap-8'>
             {getProjectsToShow().map((proj, idx) => (
               <ProjectCard key={idx} proj={proj} idx={idx} />
@@ -167,16 +168,14 @@ const Project = () => {
         </div>
       </div>
 
-      {/* Toggle Button */}
+      {/* Toggle Button (same as Hero button) */}
       <div className='mt-12 lg:mt-16 text-center relative z-10'>
         <button 
           onClick={toggleProjects}
-          className='bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-2 border-orange-400 hover:border-orange-500'
+          className="cursor-pointer font-semibold py-3 px-6 md:py-4 md:px-8 text-white rounded-[40px] transition-colors duration-300 text-sm md:text-base bg-[#B2E447FF]"
         >
           {showAll ? 'View Less Projects' : 'View More Projects'}
         </button>
-        
-      
       </div>
     </section>
   )

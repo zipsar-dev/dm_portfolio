@@ -149,39 +149,30 @@ const Services = () => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    // Get the width of one set of cards
     const cardWidth = 320; // Base card width
-    const gap = 24; // Gap between cards
+    const gap = 24; 
     const singleSetWidth = servicesData.length * (cardWidth + gap);
 
-    // Create infinite scroll animation
     animationRef.current = gsap.to(scrollContainer, {
       x: -singleSetWidth,
-      duration: 60, // Adjust speed here (higher = slower)
+      duration: 60,
       ease: "none",
       repeat: -1,
     });
 
-    // Pause on hover
     const handleMouseEnter = () => {
-      if (animationRef.current) {
-        animationRef.current.pause();
-      }
+      if (animationRef.current) animationRef.current.pause();
     };
 
     const handleMouseLeave = () => {
-      if (animationRef.current) {
-        animationRef.current.resume();
-      }
+      if (animationRef.current) animationRef.current.resume();
     };
 
     scrollContainer.addEventListener('mouseenter', handleMouseEnter);
     scrollContainer.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
-      }
+      if (animationRef.current) animationRef.current.kill();
       scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
       scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
     };
@@ -195,9 +186,8 @@ const Services = () => {
       {/* Header Section */}
       <div className="flex flex-col items-center justify-center text-center mb-8 sm:mb-12 md:mb-16 max-w-4xl">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 flex items-center gap-3">
-          Digital <span className="text-orange-400">Magic...</span>
+          Digital <span style={{ color: "#B2E447FF" }}>Magic...</span>
           <img src="/Images/sparkle.png" alt="" className="w-10"/>
-
         </h1>
         <p className="text-zinc-700/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
           We sprinkle creativity with strategy to make your brand impossible to
