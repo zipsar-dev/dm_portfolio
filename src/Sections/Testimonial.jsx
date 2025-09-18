@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import TestimonialCard from "../Components/Card/TestimonialCard";
 
 const Testimonial = () => {
@@ -54,19 +54,57 @@ const Testimonial = () => {
     },
   ];
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const els = Array.from(containerRef.current?.querySelectorAll("[data-animate]") || []);
+
+    if (!els.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      // Fallback - show all
+      els.forEach((el) => el.classList.add("in-view"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    els.forEach((el) => io.observe(el));
+
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section
       id="Testimonial"
       className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      ref={containerRef}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6">
+          <h1
+            data-animate
+            className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 opacity-0 transform translate-y-6"
+          >
             Love{" "}
             <span className="text-[#B2E447FF]">Letters...</span>
           </h1>
-          <p className="text-zinc-900/50 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+          <p
+            data-animate
+            className="text-zinc-900/50 text-sm sm:text-base md:text-lg max-w-2xl mx-auto opacity-0 transform translate-y-6"
+            style={{ transitionDelay: "0.12s" }}
+          >
             Our clients don't just work with us — they rave about us
           </p>
         </div>
@@ -74,7 +112,12 @@ const Testimonial = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex justify-center">
+            <div
+              key={index}
+              className="flex justify-center"
+              data-animate
+              style={{ transitionDelay: `${0.16 + index * 0.06}s` }}
+            >
               <div className="w-full max-w-sm">
                 <TestimonialCard
                   name={testimonial.name}
@@ -88,6 +131,22 @@ const Testimonial = () => {
           ))}
         </div>
       </div>
+
+      {/* Inline animation styles */}
+      <style>{`
+        [data-animate] {
+          transition: opacity 520ms cubic-bezier(.2,.9,.3,1), transform 520ms cubic-bezier(.2,.9,.3,1);
+          will-change: opacity, transform;
+        }
+        [data-animate].in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        /* Respect user preference for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          [data-animate] { transition: none !important; transform: none !important; opacity: 1 !important; }
+        }
+      `}</style>
     </section>
   );
 };

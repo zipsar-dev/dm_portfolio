@@ -109,7 +109,7 @@ const Footer = () => {
                     <div className="flex items-center gap-3">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
                       <a
-                        href="tel:+1234567890"
+                        href="tel:+91 82489 96200"
                         className="transition-colors duration-200 text-sm sm:text-base"
                         style={{ color: COLORS.MUTED }}
                         onMouseEnter={(e) =>
@@ -119,7 +119,7 @@ const Footer = () => {
                           (e.currentTarget.style.color = COLORS.MUTED)
                         }
                       >
-                        +1 (234) 567-890
+                        +91 82489 96200
                       </a>
                     </div>
                     <div className="flex items-center gap-3">
