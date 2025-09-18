@@ -6,6 +6,18 @@ const Hero = () => {
       id="Home"
       className="min-h-[calc(100vh-80px)] relative flex justify-center items-center flex-col px-4 py-8 overflow-hidden"
     >
+      {/* Grid Background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(178,228,71,0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(178,228,71,0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px", // size of grid squares
+        }}
+      ></div>
+
       {/* Background Illustrations - Hidden on mobile for cleaner look */}
       <div className="absolute inset-0 pointer-events-none">
         <img 
