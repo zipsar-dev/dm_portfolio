@@ -109,7 +109,7 @@ const Navbar = () => {
           <h1 className="font-bold text-xl text-gray-900 flex items-center">
             <a href="/" aria-label="FORZIC — Home" className="inline-block">
               <img
-                src="public/forziclogo.svg"
+                src="/forziclogo.svg"
                 alt="FORZIC logo"
                 className="h-8 sm:h-10 md:h-12 object-contain"
               />
